@@ -14,6 +14,8 @@ RUN apt-get -y update \
 && apt-get -y install nginx \
 && apt-get -y install libnss3-tools
 
+ENV AUTOINDEX on
 COPY srcs ./root/
 WORKDIR /root/
+EXPOSE 80 443
 CMD bash container_entrypoint.sh

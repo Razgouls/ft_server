@@ -4,6 +4,15 @@ cp nginx_conf /etc/nginx/sites-available/localhost
 ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/
 cp info.php /var/www/localhost/
 
+#CERTIFICATS SSL
+mkdir mkcert && cd mkcert
+wget https://github.com/FiloSottile/mkcert/releases/download/v1.2.0/mkcert-v1.2.0-linux-amd64
+mv mkcert-v1.2.0-linux-amd64 mkcert
+chmod +x mkcert
+./mkcert -install
+./mkcert localhost
+cd
+
 #MYSQL
 service mysql start
 echo "CREATE DATABASE wordpress;" | mysql -u root
@@ -23,7 +32,9 @@ cp wp-config.php /var/www/localhost/wordpress/
 wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
 tar -xzvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 mv phpMyAdmin-4.9.0.1-all-languages phpMyAdmin
-cp -r phpMyAdmin /var/www/localhost/phpMyAdmin
+cp -r phpMyAdmin /var/www/localhost/phpMyAdminexit
+
+echo $AUTOINDEX
 
 #START
 service mysql restart
