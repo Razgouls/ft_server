@@ -180,6 +180,9 @@ Si on décide d'utiliser 'root' et de lui assigner un mot de passe, lorsqu'on vo
     
 Il est donc plus simple d'utiliser un user dédié. (Et c'est fortement recommandé pour des raisons de sécurité.)
 
+http://localhost:8084/wordpress/?page_id=5
+http://localhost:8084/wordpress/?p=7
+
 **srcs/tests/todo_list.php :**
 
 `$user = "test";`

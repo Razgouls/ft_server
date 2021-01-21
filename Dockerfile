@@ -5,6 +5,7 @@ RUN apt-get -y update \
 && apt-get -y install mariadb-server \ 
 && apt-get -y install wget \
 && apt-get -y install php \
+&& apt-get -y install php7.3 \
 && apt-get -y install php-cli \
 && apt-get -y install php-cgi \
 && apt-get -y install php-mbstring \
