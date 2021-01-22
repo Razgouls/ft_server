@@ -1,8 +1,9 @@
 #NGINX
 mkdir /var/www/localhost
+chmod 777 autoindex.sh
+bash autoindex.sh
 cp nginx_conf /etc/nginx/sites-available/localhost
 ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/
-cp info.php /var/www/localhost/
 
 #CERTIFICATS SSL
 mkdir mkcert && cd mkcert
@@ -32,9 +33,7 @@ cp wp-config.php /var/www/localhost/wordpress/
 wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
 tar -xzvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 mv phpMyAdmin-4.9.0.1-all-languages phpMyAdmin
-cp -r phpMyAdmin /var/www/localhost/phpMyAdminexit
-
-echo $AUTOINDEX
+cp -r phpMyAdmin /var/www/localhost/phpMyAdmin
 
 #START
 service mysql restart

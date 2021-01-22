@@ -14,7 +14,7 @@ RUN apt-get -y update \
 && apt-get -y install nginx \
 && apt-get -y install libnss3-tools
 
-ENV AUTOINDEX on
+ENV AUTOINDEX 1
 COPY srcs ./root/
 WORKDIR /root/
 EXPOSE 80 443
